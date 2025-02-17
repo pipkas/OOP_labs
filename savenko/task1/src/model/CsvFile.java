@@ -34,6 +34,7 @@ public class CsvFile implements Closeable{
         }
         file.flush();
     }
+
     public void close() throws IOException {
         file.close();
     }
