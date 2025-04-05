@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.java.MultCommandTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-03-31T16:47:58.984Z" hostname="DESKTOP-4B7T0JR" time="0.013">
+  <properties/>
+  <testcase name="multIncorrectNumberArgsTest()" classname="test.java.MultCommandTest" time="0.004"/>
+  <testcase name="multTest()" classname="test.java.MultCommandTest" time="0.002"/>
+  <testcase name="multIncorrectArgsTest()" classname="test.java.MultCommandTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.java.PrintCommandTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-03-31T16:47:59.046Z" hostname="DESKTOP-4B7T0JR" time="0.032">
+  <properties/>
+  <testcase name="printTest()" classname="test.java.PrintCommandTest" time="0.009"/>
+  <testcase name="printIncorrectNumberArgsTest()" classname="test.java.PrintCommandTest" time="0.003"/>
+  <testcase name="printIncorrectArgsTest()" classname="test.java.PrintCommandTest" time="0.014"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
