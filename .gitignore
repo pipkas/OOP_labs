@@ -2,16 +2,16 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-!**/.gradle/
-!**/.idea/
-!**/build/
-!**/gradle/
-!**/.gitattributes
-!**/gradle.properties
-!**/gradlew
-!**/gradlew.bat
-!**/lab1.iml
-!**/settings.gradle
+**/.gradle/
+**/.idea/
+**/build/
+**/gradle/
+**/.gitattributes
+**/gradle.properties
+**/gradlew
+**/gradlew.bat
+**/lab1.iml
+**/settings.gradle
 
 ### Eclipse ###
 .apt_generated
