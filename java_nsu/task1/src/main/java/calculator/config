@@ -1,9 +1,0 @@
-+=main.java.calculator.commands.AddCommand
--=main.java.calculator.commands.SubCommand
-*=main.java.calculator.commands.MultCommand
-/=main.java.calculator.commands.DivCommand
-SQRT=main.java.calculator.commands.SqrtCommand
-DEFINE=main.java.calculator.commands.DefineCommand
-POP=main.java.calculator.commands.PopCommand
-PUSH=main.java.calculator.commands.PushCommand
-PRINT=main.java.calculator.commands.PrintCommand
