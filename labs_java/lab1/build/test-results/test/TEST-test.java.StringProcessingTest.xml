@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.java.StringProcessingTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-04-21T07:02:53.394Z" hostname="DESKTOP-4B7T0JR" time="0.016">
-  <properties/>
-  <testcase name="processShouldBePairTest()" classname="test.java.StringProcessingTest" time="0.008"/>
-  <testcase name="processStopTest()" classname="test.java.StringProcessingTest" time="0.003"/>
-  <testcase name="processTest()" classname="test.java.StringProcessingTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
