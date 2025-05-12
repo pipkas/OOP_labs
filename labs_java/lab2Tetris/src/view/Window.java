@@ -24,6 +24,7 @@ public class Window extends JFrame implements PropertyChangeListener {
     private final Controller controller;
 
     private GamePanel gamePanel;
+    private AboutPanel aboutPanel;
     private MainMenu menuPanel;
     private LeaderBoard leaderBoardPanel;
     public static final int width = Model.boardWidth * Config.SIZE * 2;
@@ -52,9 +53,11 @@ public class Window extends JFrame implements PropertyChangeListener {
 
         leaderBoardPanel = new LeaderBoard(controller);
         menuPanel = new MainMenu(controller);
+        aboutPanel = new AboutPanel(controller);
 
         add(leaderBoardPanel);
         add(menuPanel);
+        add(aboutPanel);
         revalidate();// используется после add чтобы компоненты дорисовать
     }
 
@@ -70,6 +73,12 @@ public class Window extends JFrame implements PropertyChangeListener {
             boolean inMenu = (Boolean)evt.getNewValue();
             if (inMenu) {
                 SwingUtilities.invokeLater(this::showMenu);
+            }
+        }
+        if ("inAbout".equals(evt.getPropertyName())) {
+            boolean inAbout = (Boolean)evt.getNewValue();
+            if (inAbout) {
+                SwingUtilities.invokeLater(this::showAbout);
             }
         }
         if ("inLeaderBoard".equals(evt.getPropertyName())) {
@@ -105,12 +114,21 @@ public class Window extends JFrame implements PropertyChangeListener {
     public void showMenu() {
         clean(gamePanel);
         clean(leaderBoardPanel);
-        //clean(aboutPanel);
+        clean(aboutPanel);
 
         menuPanel.setVisible(true);
         repaint();
         menuPanel.setFocusable(true);
         menuPanel.requestFocusInWindow();
+    }
+
+    public void showAbout(){
+        clean(menuPanel);
+
+        aboutPanel.setVisible(true);
+        repaint();
+        aboutPanel.setFocusable(true);
+        aboutPanel.requestFocusInWindow();
     }
 
     public void showLeaderboard(){

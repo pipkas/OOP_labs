@@ -42,7 +42,11 @@ public class Controller {
     }
 
     public void handleAbout(ActionEvent e) {
-        // Логика показа информации об игре
+        model.setInMenu(false);
+        model.setInGame(false);
+        model.setInLeaderBoard(false);
+        model.setInAbout(true);
+        model.openAbout();
     }
 
     public void handleExit(ActionEvent e) {
@@ -57,6 +61,7 @@ public class Controller {
     }
 
     public void moveToMenu(ActionEvent e) {
+        model.setInAbout(false);
         model.setInMenu(true);
         model.setInGame(false);
         model.setInLeaderBoard(false);

@@ -13,6 +13,7 @@ import java.io.ObjectOutputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 public class Model {
@@ -25,12 +26,14 @@ public class Model {
 
     private boolean inMenu;
     private boolean inGame;
+    private boolean inAbout;
     private boolean inLeaderBoard;
 
     public Model(){
         inMenu = false;
         inGame = false;
         inLeaderBoard = false;
+        inAbout = false;
         pcs = new PropertyChangeSupport(this);
         leaderBoard = loadLeaderBoard();
     }
@@ -56,6 +59,11 @@ public class Model {
         pcs.firePropertyChange("inLeaderBoard", null, true);
     }
 
+    public void openAbout(){
+        inAbout = true;
+        pcs.firePropertyChange("inAbout", null, true);
+    }
+
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         pcs.addPropertyChangeListener(listener);
     }
@@ -78,17 +86,23 @@ public class Model {
 
     public void addPlayer(String playerName) {
         int score = gameThread.getScore();
-        leaderBoard.removeIf(ps -> ps.getPlayerName().equals(playerName));
 
-        leaderBoard.add(new PlayerScore(score, playerName));
+        Optional<PlayerScore> existingScore = leaderBoard.stream()
+                .filter(ps -> ps.getPlayerName().equals(playerName))
+                .findFirst();
 
-        leaderBoard.sort((p1, p2) -> Integer.compare(p2.getScore(), p1.getScore()));
-        if (leaderBoard.size() > 10) {
-            leaderBoard = new ArrayList<>(leaderBoard.subList(0, 10));
+        if (!existingScore.isPresent() || score > existingScore.get().getScore()) {
+            leaderBoard.removeIf(ps -> ps.getPlayerName().equals(playerName));
+            leaderBoard.add(new PlayerScore(score, playerName));
+
+            leaderBoard.sort((p1, p2) -> Integer.compare(p2.getScore(), p1.getScore()));
+            if (leaderBoard.size() > 10) {
+                leaderBoard = new ArrayList<>(leaderBoard.subList(0, 10));
+            }
+
+            saveLeaderBoard();
+            pcs.firePropertyChange("updateLeaderBoard", null, leaderBoard);
         }
-
-        saveLeaderBoard();
-        pcs.firePropertyChange("updateLeaderBoard", null, leaderBoard);
     }
 
     public List<PlayerScore> loadLeaderBoard() {
@@ -132,4 +146,8 @@ public class Model {
     public void setInLeaderBoard(boolean inLeaderBoard) {
         this.inLeaderBoard = inLeaderBoard;
     }
+    public void setInAbout(boolean inAbout) {
+        this.inAbout = inAbout;
+    }
+
 }
