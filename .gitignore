@@ -1,39 +1,58 @@
-### IntelliJ IDEA ###
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
-**/.gradle/
-**/.idea/
-**/build/
-**/gradle/
-**/.gitattributes
-**/gradle.properties
-**/gradlew
-**/gradlew.bat
-**/lab1.iml
-**/settings.gradle
+### JetBrains IDE ###
+# Директория конфигурации IDE
+.idea/
+*.iml
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+# Файлы конкретно CLion
+cmake-build-*/
+cmake-build-debug/
+cmake-build-release/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+### CMake ###
+# Автогенерируемые файлы CMake
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
 
-### VS Code ###
-.vscode/
+### Сборка и исполняемые файлы ###
+# Исполняемые файлы
+*.exe
+*.out
+*.app
 
-### Mac OS ###
+# Библиотеки
+*.so
+*.so.*
+*.dylib
+*.dll
+*.a
+*.lib
+
+# Объектные файлы
+*.o
+*.obj
+
+# Логи и дампы
+*.log
+*.dmp
+
+### Системные файлы ###
+# Резервные копии и временные файлы
+*~
+*.swp
+*.swo
 .DS_Store
+Thumbs.db
+
+### Проекты CLion ###
+# Пользовательские настройки запуска
+.clion/
+
+# Автогенерируемые файлы
+*.autosave
+
