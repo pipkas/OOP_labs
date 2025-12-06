@@ -1,0 +1,58 @@
+### JetBrains IDE ###
+# Директория конфигурации IDE
+.idea/
+*.iml
+
+# Файлы конкретно CLion
+cmake-build-*/
+cmake-build-debug/
+cmake-build-release/
+
+### CMake ###
+# Автогенерируемые файлы CMake
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+
+### Сборка и исполняемые файлы ###
+# Исполняемые файлы
+*.exe
+*.out
+*.app
+
+# Библиотеки
+*.so
+*.so.*
+*.dylib
+*.dll
+*.a
+*.lib
+
+# Объектные файлы
+*.o
+*.obj
+
+# Логи и дампы
+*.log
+*.dmp
+
+### Системные файлы ###
+# Резервные копии и временные файлы
+*~
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+### Проекты CLion ###
+# Пользовательские настройки запуска
+.clion/
+
+# Автогенерируемые файлы
+*.autosave
+
